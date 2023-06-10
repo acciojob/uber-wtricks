@@ -41,6 +41,7 @@ public class AdminServiceImpl implements AdminService {
 
 		Admin admin = oldRow.get();
 		admin.setPassword(password);
+		adminRepository1.save(admin);
 		return admin;
 	}
 
