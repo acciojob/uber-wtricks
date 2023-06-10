@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Driver {
@@ -26,7 +26,7 @@ public class Driver {
     private Cab cab;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "driver")
-    ArrayList<TripBooking> tripBookingList = new ArrayList<>();
+    List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Driver() {}
 

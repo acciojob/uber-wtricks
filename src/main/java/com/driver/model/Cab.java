@@ -16,7 +16,7 @@ public class Cab {
 
     private boolean available;
 
-    @OneToOne(mappedBy = "driver")
+    @OneToOne(mappedBy = "cab")
     private Driver driverId;
 
     public Cab() {}
