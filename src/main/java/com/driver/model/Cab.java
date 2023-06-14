@@ -17,7 +17,7 @@ public class Cab {
     private boolean available;
 
     @OneToOne(mappedBy = "cab")
-    private Driver driverId;
+    private Driver driver;
 
     public Cab() {}
 
@@ -25,7 +25,7 @@ public class Cab {
         this.id = id;
         this.perKmRate = perKmRate;
         this.available = available;
-        this.driverId = driver;
+        this.driver = driver;
     }
 
     public int getPerKmRate() {
@@ -52,11 +52,11 @@ public class Cab {
         this.perKmRate = perKmRate;
     }
 
-    public void setDriverId(Driver driverId) {
-        this.driverId = driverId;
+    public void setDriver(Driver driverId) {
+        this.driver = driverId;
     }
 
-    public Driver getDriverId() {
-        return driverId;
+    public Driver getDriver() {
+        return driver;
     }
 }
