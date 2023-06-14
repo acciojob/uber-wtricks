@@ -54,4 +54,12 @@ public class Customer {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
 }

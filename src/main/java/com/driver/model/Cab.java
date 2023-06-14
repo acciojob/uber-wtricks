@@ -51,4 +51,12 @@ public class Cab {
     public void setPerKmRate(int perKmRate) {
         this.perKmRate = perKmRate;
     }
+
+    public void setDriverId(Driver driverId) {
+        this.driverId = driverId;
+    }
+
+    public Driver getDriverId() {
+        return driverId;
+    }
 }

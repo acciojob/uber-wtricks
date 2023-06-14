@@ -64,4 +64,16 @@ public class Driver {
     public void setMobile(String mobile) {
         this.mobile = mobile;
     }
+
+    public void setTripBookingList(List<TripBooking> tripBookingList) {
+        this.tripBookingList = tripBookingList;
+    }
+
+    public void setCab(Cab cab) {
+        this.cab = cab;
+    }
+
+    public List<TripBooking> getTripBookingList() {
+        return tripBookingList;
+    }
 }
