@@ -4,6 +4,9 @@ import com.driver.model.Admin;
 import com.driver.model.Customer;
 import com.driver.model.Driver;
 import com.driver.services.AdminService;
+import com.driver.services.impl.AdminServiceImpl;
+import com.driver.services.impl.CustomerServiceImpl;
+import com.driver.services.impl.DriverServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,34 +19,34 @@ import java.util.List;
 public class AdminController {
 
 	@Autowired
-	private AdminService service;
+	AdminServiceImpl adminService;
 
 	@PostMapping("/register")
-	public ResponseEntity<Void> registerAdmin(@RequestBody Admin admin) {
-		service.adminRegister(admin);
+	public ResponseEntity<Void> registerAdmin(@RequestBody Admin admin){
+		adminService.adminRegister(admin);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@PutMapping("/update")
 	public ResponseEntity<Admin> updateAdminPassword(@RequestParam Integer adminId, @RequestParam String password){
-		Admin updatedAdmin = service.updatePassword(adminId, password);
+		Admin updatedAdmin = adminService.updatePassword(adminId,password);
 		return new ResponseEntity<>(updatedAdmin, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete")
 	public void deleteAdmin(@RequestParam Integer adminId){
-		service.deleteAdmin(adminId);
+		adminService.deleteAdmin(adminId);
 	}
 
 	@GetMapping("/listOfCustomers")
 	public List<Customer> listOfCustomers() {
-		List<Customer> listOfCustomers = service.getListOfCustomers();
+		List<Customer> listOfCustomers = adminService.getListOfCustomers();
 		return listOfCustomers;
 	}
 
 	@GetMapping("/listOfDrivers")
 	public List<Driver> listOfDrivers() {
-		List<Driver> listOfDrivers = service.getListOfDrivers();
+		List<Driver> listOfDrivers = adminService.getListOfDrivers();
 		return listOfDrivers;
 	}
 }
